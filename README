@@ -1,0 +1,39 @@
+g++ --version 5.4.0
+
+ubuntu 18.04
+
+
+cd mabcode/src
+
+make clean
+
+make
+
+./mab query --algo <algo> [options]
+algo:
+  delta_e (Delta Elimination)
+  topk_delta_e (Topk Delta Elimination)
+  d_delta_e (Delta Elimination with Round Limit)
+  topk_d_delta_e (Topk Delta Elimination with Round Limit)
+  egde (Exponential Gap Delta Elimination)
+options:
+  --prefix <prefix>
+  --num_arms <number of arms, 2000>
+  --epsilon <epsilon>
+  --delta <delta>
+  --k <top k>
+  --R <round limit>
+  --arm_dist <normal, uniform, segment>
+  --repeat <repeat times>
+
+Examples:
+
+./mab query --algo delta_e --prefix ../data/ --num_arms 2000 --epsilon 0.1 --delta 0.1 --arm_dist segment --repeat 2
+
+./mab query --algo d_delta_e --prefix ../data/ --num_arms 2000 --epsilon 0.1 --delta 0.1 --R 2 --arm_dist normal --repeat 2
+
+./mab query --algo topk_delta_e --prefix ../data/ --num_arms 2000 --epsilon 0.1 --delta 0.1 --k 20 --arm_dist uniform --repeat 2
+
+./mab query --algo topk_d_delta_e --prefix ../data/ --num_arms 2000 --epsilon 0.1 --delta 0.1 --k 20 --R 2 --arm_dist uniform --repeat 2
+
+./mab query --algo egde --prefix ../data/ --num_arms 2000 --delta 0.1 --arm_dist normal --repeat 2

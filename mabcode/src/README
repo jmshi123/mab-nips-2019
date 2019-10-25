@@ -1,6 +1,0 @@
-#--arm_dist: normal, uniform, segment
-./mab query --algo delta_e --prefix ../data/ --num_arms 2000 --epsilon 0.1 --delta 0.1 --arm_dist segment --repeat 2
-./mab query --algo d_delta_e --prefix ../data/ --num_arms 2000 --epsilon 0.1 --delta 0.1 --R 2 --arm_dist normal --repeat 2
-./mab query --algo topk_delta_e --prefix ../data/ --num_arms 2000 --epsilon 0.1 --delta 0.1 --k 20 --arm_dist uniform --repeat 2
-./mab query --algo topk_d_delta_e --prefix ../data/ --num_arms 2000 --epsilon 0.1 --delta 0.1 --k 20 --R 2 --arm_dist uniform --repeat 2
-./mab query --algo egde --prefix ../data/ --num_arms 2000 --delta 0.1 --arm_dist normal --repeat 2

@@ -84,7 +84,6 @@ int main(int argc, char *argv[]) {
 	for (int i = 0; i < argc; i++) {
 		std::string help_str = ""
 				"mab query --algo <algo> [options]\n"
-				"mab generate-arms [options]\n"
 
 				"algo: \n"
 				"  delta_e (Delta Elimination)\n"
